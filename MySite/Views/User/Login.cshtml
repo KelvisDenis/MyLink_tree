@@ -1,0 +1,34 @@
+﻿@model MySite.Models.OutherModels.FormLogin
+
+@{
+    Layout = "_LayoutLogin";
+}
+<div class="main-container">
+    <div class="form-container">
+
+        <div class="srouce"><a title="Learn How to create Beautiful HTML & CSS login page template" href="https://www.w3jar.com/beautiful-html-css-login-page-template/">W3jar.Com</a></div>
+
+        <div class="form-body">
+            <h2 class="title">Log in with</h2>
+            <form asp-action="Login" method="post" class="the-form">
+                <input type="hidden" asp-for="User.Id"></input>
+                <label asp-for="User.Email">Email</label>
+                <input type="email" asp-for="User.Email" placeholder="Enter you email">
+
+                <label asp-for="User.Password">password</label>
+                <input type="password" asp-for="User.Password" placeholder="Enter your password">
+
+                <input type="submit" value="Log In" />
+
+            </form>
+
+        </div><!-- FORM BODY-->
+
+        <div class="form-footer">
+            <div>
+                <span>Don't have an account?</span> <a asp-action="Create">Sign Up</a>
+            </div>
+        </div><!-- FORM FOOTER -->
+
+    </div><!-- FORM CONTAINER -->
+ </div>

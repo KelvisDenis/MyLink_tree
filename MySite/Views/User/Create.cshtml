@@ -1,0 +1,29 @@
+﻿@model MySite.Models.OutherModels.FormLogin
+@{
+    Layout = "_LayoutLogin";
+}
+<div class="main-container">
+    <div class="form-container">
+
+        <div class="form-body">
+            <h2 class="title">Create</h2>
+            <form asp-action="Create" method="post" class="the-form">
+
+                <label asp-for="User.Email">Create Email</label>
+                <input type="email" asp-for="User.Email" placeholder="Create email">
+
+                <label asp-for="User.Password">Create password</label>
+                <input type="password" asp-for="User.Password" placeholder="Enter your password">
+
+                <label asp-for="User.UserName">UserName</label>
+                <input asp-for="User.UserName" placeholder="Enter your username">
+
+                <input type="submit" value="Create">
+
+            </form>
+
+        </div><!-- FORM BODY-->
+
+
+    </div><!-- FORM CONTAINER -->
+</div>
