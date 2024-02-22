@@ -19,9 +19,9 @@ namespace MySite.Services
             await _context.SaveChangesAsync();
 
         }
-        public async Task<User> GetUserAsync(int id)
+        public async Task<User> GetUserAsync(string log)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(o => o.Id == id);
+            var user = await _context.Users.FirstOrDefaultAsync(o => o.Email == log);
             return user;
 
         }

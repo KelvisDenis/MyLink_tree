@@ -29,8 +29,8 @@ namespace MySite.Controllers
             if (user == null) { 
                 return View();
             }
-            var create = _userServices.GetUserAsync(id);
-            if (create == null) {
+            var create = _userServices.GetUserAsync(user.Email);
+            if (create.Result == null) {
                 return View(again);
             }
                 return View("Index");
