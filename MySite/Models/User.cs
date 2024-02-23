@@ -27,5 +27,12 @@ namespace MySite.Models
         public void Remove(Links links) {
         Links.Remove(links);
         }
+        public bool checkpassword (string email, string senha)
+        {
+            if (email == Email && senha == Password) { 
+                return true;
+            }
+            return false;
+        }
     }
 }

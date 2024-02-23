@@ -23,33 +23,43 @@ namespace MySite.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Login(int id, User user)
+        [ValidateAntiForgeryToken]
+
+        public IActionResult Login(User user)
         {
             var again = new FormLogin { User = user };
-            if (user == null) { 
+            if (user.Email == null || user.Password == null) { 
                 return View();
             }
             var create = _userServices.GetUserAsync(user.Email);
             if (create.Result == null) {
                 return View(again);
             }
-                return View("Index");
+            var teste = create.Result.checkpassword(user.Email, user.Password);
+            if (teste)
+            {
+                return View("Links");
+            }
+            return View(again);
+
         }
-             
-        
+
+
         [HttpPost]
+        [ValidateAntiForgeryToken]
+
         public IActionResult Create(User user)
         {
 
-            if (user == null)
+            if (user.Email == null || user.Password == null || user.UserName == null)
             {
-                return View("Login");
+                return View();
             }
             if (ModelState.IsValid)
             {
 
                 var create = _userServices.AddAsync(user);
-                return View("Index");
+                return View("Links");
             }
             var again = new FormLogin { User = user };
             return View("Login", again);
@@ -57,6 +67,19 @@ namespace MySite.Controllers
         public IActionResult Create()
         {
             return View();
+        }
+        public IActionResult Links()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Links(User user)
+        {
+            if (user.Links == null) return View();
+
+            var links = _userServices.AddLinksAsync(user);
+            return View("Index");
         }
     }
 }

@@ -1,0 +1,49 @@
+﻿@model MySite.Models.OutherModels.FormLogin
+@{
+    Layout = "_LayoutLogin";
+}
+<div class="main-container">
+    <div class="form-container">
+
+        <div class="srouce"><a title="Learn How to create Beautiful HTML & CSS login page template" href="https://www.w3jar.com/beautiful-html-css-login-page-template/">W3jar.Com</a></div>
+     
+        <div class="form-body">
+            <h2 class="title">Create Links</h2>    
+            <div class="float-lg-end">
+                <a asp-action="Index"> skip</a>
+            </div>
+            
+            <form asp-action="Links" method="post" class="the-form">
+
+                <label >url site</label>
+                <input asp-for="User.Links" type="url" placeholder="Enter you first link">
+
+                <label>
+                    url social network
+                </label>
+                <input asp-for="User.Links" type="url" placeholder="Enter you second link">
+
+                <label>
+                    url social network
+                </label>
+                <input asp-for="User.Links" type="url" placeholder="Enter your  third link">
+                <label>
+                    url store
+                </label>
+                <input asp-for="User.Links" type="url" placeholder="Enter your fourth link">
+
+                <input type="submit" value="Create" />
+               
+
+            </form>
+
+        </div><!-- FORM BODY-->
+
+        <div class="form-footer">
+            <div>
+                <span>Don't have an account?</span> <a asp-action="Create">Sign Up</a>
+            </div>
+        </div><!-- FORM FOOTER -->
+
+    </div><!-- FORM CONTAINER -->
+</div>

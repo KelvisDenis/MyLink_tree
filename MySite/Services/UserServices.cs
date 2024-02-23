@@ -29,6 +29,11 @@ namespace MySite.Services
         {
             var getLinks = await _context.Users.FindAsync(user.Links);
             return getLinks.Links;
+        }
+        public async Task AddLinksAsync(User user)
+        {
+            await _context.Links.AddRangeAsync(user.Links);
+            await _context.SaveChangesAsync();
 
         }
 
