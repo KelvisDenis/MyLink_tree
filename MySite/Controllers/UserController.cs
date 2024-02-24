@@ -2,6 +2,7 @@
 using MySite.Models;
 using MySite.Models.OutherModels;
 using MySite.Services;
+using System.ComponentModel;
 
 namespace MySite.Controllers
 {
@@ -38,6 +39,8 @@ namespace MySite.Controllers
             var teste = create.Result.checkpassword(user.Email, user.Password);
             if (teste)
             {
+                ViewData["Email"] = create.Result.Email;
+
                 return View("Links");
             }
             return View(again);
@@ -70,16 +73,28 @@ namespace MySite.Controllers
         }
         public IActionResult Links()
         {
-            return View();
+            List<Links> list = new List<Links>();
+            return View(list);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Links(User user)
+        public async Task<IActionResult> Links(FormLogin form)
         {
-            if (user.Links == null) return View();
-
-            var links = _userServices.AddLinksAsync(user);
-            return View("Index");
+            List<Links> list = new List<Links>();
+            if (ModelState == null) return View();
+            string[] x = ModelState["Link.Url"].AttemptedValue.Split(",");
+            foreach (var item in x )
+            {
+                form.Link.Url = item;
+                 _userServices.AddLinksAsync(form.Link);
+            }
+            /*foreach (var item in list)
+            {
+                form.User.Add(item);
+            }
+            var links = _userServices.AddLinksAsync(form.Link);
+            */
+            return View("Index", form.User);
         }
     }
 }

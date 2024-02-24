@@ -2,6 +2,7 @@
 @{
     Layout = "_LayoutLogin";
 }
+
 <div class="main-container">
     <div class="form-container">
 
@@ -16,24 +17,23 @@
             <form asp-action="Links" method="post" class="the-form">
 
                 <label >url site</label>
-                <input asp-for="User.Links" type="url" placeholder="Enter you first link">
+                <input asp-for=" Link.Url" type="url" placeholder="Enter you first link">
 
                 <label>
                     url social network
                 </label>
-                <input asp-for="User.Links" type="url" placeholder="Enter you second link">
+                <input asp-for="Link.Url" type="url" placeholder="Enter you second link">
 
                 <label>
                     url social network
                 </label>
-                <input asp-for="User.Links" type="url" placeholder="Enter your  third link">
+                <input  asp-for="Link.Url" type="url" placeholder="Enter your  third link">
                 <label>
                     url store
                 </label>
-                <input asp-for="User.Links" type="url" placeholder="Enter your fourth link">
+                <input asp-for="Link.Url" type="url" placeholder="Enter your fourth link">
 
                 <input type="submit" value="Create" />
-               
 
             </form>
 
