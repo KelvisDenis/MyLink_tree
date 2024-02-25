@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using MySite.Data;
 using MySite.Models;
 using MySite.Models.OutherModels;
@@ -9,12 +10,18 @@ namespace MySite.Services
     {
         private readonly MySiteContext _context;
 
+  
+    
+
         public UserServices(MySiteContext context)
         {
             _context = context;
         }
         public async Task AddAsync(User user)
         {
+           
+           
+
             await _context.Users.AddAsync(user);
             await _context.SaveChangesAsync();
 

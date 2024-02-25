@@ -1,35 +1,27 @@
 ﻿@{
     Layout = "_Layout";
+    int cont = 0;
 }
 <table class="table">
-    <thead>
-        <tr>
-            <th scope="col">First</th>
-            <th scope="col">Second</th>
-            <th scope="col">third</th>
-            <th scope="col">Fourth</th>
-
-        </tr>
-    </thead>
+    
+        <h3>Welcome:@TempData.Peek("Email")</h3>
+        <h4>Your links</h4>
+       
     <tbody>
-        <tr>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>mdo</td>
-            <td>twitter</td>
-        </tr>
-        <tr>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>x</td>
-            <td>twitter</td>
-        </tr>
-        <tr>
-            <td>Larry the Bird</td>
-            <td>twitter</td>
-            <td>twitter</td>
-            <td>twitter</td>
-        </tr>
+        @foreach(var x in ViewBag.Url)
+        {
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                    <h5 class="card-title">@x</h5>
+                    <p class="card-text">You link @{
+                            cont += 1;
+                        } @cont</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+        }
+       
+       
         
     </tbody>
 </table>

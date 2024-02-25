@@ -11,6 +11,12 @@ builder.Services.AddDbContext<MySiteContext>(options => options.UseNpgsql(builde
     )));
 builder.Services.AddScoped<UserServices>();
 
+builder.Services.AddRazorPages()
+                    .AddSessionStateTempDataProvider();
+builder.Services.AddControllersWithViews()
+                    .AddSessionStateTempDataProvider();
+
+builder.Services.AddSession();
 
 
 var app = builder.Build();
@@ -29,6 +35,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseSession();
 
 app.UseAuthorization();
 
