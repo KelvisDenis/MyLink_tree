@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MySite.Migrations
 {
     [DbContext(typeof(MySiteContext))]
-    [Migration("20240224165312_InitialCreate")]
+    [Migration("20240228204449_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -59,6 +59,9 @@ namespace MySite.Migrations
 
                     b.Property<string>("Password")
                         .HasColumnType("text");
+
+                    b.Property<string[]>("Urls")
+                        .HasColumnType("text[]");
 
                     b.Property<string>("UserName")
                         .HasColumnType("text");

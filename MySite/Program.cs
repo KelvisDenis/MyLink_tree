@@ -11,13 +11,11 @@ builder.Services.AddDbContext<MySiteContext>(options => options.UseNpgsql(builde
     )));
 builder.Services.AddScoped<UserServices>();
 
-builder.Services.AddRazorPages()
-                    .AddSessionStateTempDataProvider();
-builder.Services.AddControllersWithViews()
-                    .AddSessionStateTempDataProvider();
-
-builder.Services.AddSession();
-
+builder.Services.AddSession(options =>
+{
+    options.Cookie.Name = ".AdventureWorks.Session";
+    options.Cookie.IsEssential = true;
+});
 
 var app = builder.Build();
 

@@ -8,7 +8,9 @@ namespace MySite.Models
         public string? Email { get; set; }
         public string? Password { get; set; }
         public string? UserName { get; set; }
-        public ICollection<Links> Links { get; set; } = new List<Links>();
+        public string[]? Urls { get; set; }
+
+        public ICollection<Links>? Links { get; set; } = new List<Links>();
 
         public User()
         {
@@ -21,7 +23,8 @@ namespace MySite.Models
             Password = password;
             UserName = userName;
         }
-        public void Add(Links links) { 
+        public void Add(string link) {
+         Links links = new Links { Url = link};
          Links.Add(links);
         }
         public void Remove(Links links) {
@@ -34,5 +37,6 @@ namespace MySite.Models
             }
             return false;
         }
+
     }
 }

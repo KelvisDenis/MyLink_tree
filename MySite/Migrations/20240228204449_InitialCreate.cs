@@ -19,7 +19,8 @@ namespace MySite.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Email = table.Column<string>(type: "text", nullable: true),
                     Password = table.Column<string>(type: "text", nullable: true),
-                    UserName = table.Column<string>(type: "text", nullable: true)
+                    UserName = table.Column<string>(type: "text", nullable: true),
+                    Urls = table.Column<string[]>(type: "text[]", nullable: true)
                 },
                 constraints: table =>
                 {
