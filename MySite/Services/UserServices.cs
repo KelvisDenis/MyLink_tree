@@ -20,13 +20,14 @@ namespace MySite.Services
         }
         public async Task AddAsync(User user)
         {
-            await _context.Users.AddAsync(user);
-            await _context.SaveChangesAsync();
 
+              await _context.Users.AddAsync(user);
+             await _context.SaveChangesAsync();
         }
+
         public async Task<User> GetUserAsync(User log)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(o =>o.Email == log.Email);
+            var user = await _context.Users.FirstOrDefaultAsync(o => o.Email == log.Email);
             return  user;
 
         }
@@ -40,6 +41,20 @@ namespace MySite.Services
             await _context.Links.AddAsync(links);
             await _context.SaveChangesAsync();
 
+        }
+        public async Task<User> GetUseridsAsync(int? id)
+        {
+            return await _context.Users.FirstOrDefaultAsync(o => o.Id == id);
+        }
+        public async Task Update(User user)
+        {
+            var teste = await _context.Users.AnyAsync(o => o.Email == user.Email);
+            if (teste)
+            {
+                _context.Update(user);
+                _context.SaveChanges();
+            }
+           
         }
       
 

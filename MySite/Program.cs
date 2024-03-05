@@ -13,7 +13,7 @@ builder.Services.AddScoped<UserServices>();
 
 builder.Services.AddSession(options =>
 {
-    options.Cookie.Name = ".AdventureWorks.Session";
+    options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
 });
 

@@ -1,0 +1,16 @@
+﻿@model MySite.Models.User
+@{
+    Layout = "_Layout";
+}
+<h2>Delete: @Model.UserName</h2>
+<span>Deseja excluir link?</span>
+<form asp-action="Delete" method="post" class="form-floating mb-3">
+    <input type="hidden" asp-for="@Model.Id"></input>
+   
+        <label for="floatingInputValue2" class="form-lable"></label>
+
+        <input type="url" class="form-control" id="floatingInputValue2" asp-for="@Model.Urls" value="@ViewBag.LinkExclud">
+
+
+    <input type="submit" class="btn btn-primary"value="Delete" ></input>
+</form>

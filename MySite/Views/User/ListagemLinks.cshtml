@@ -1,0 +1,59 @@
+﻿@model MySite.Models.User
+@{
+    Layout = "_Layout";
+    var cont = 0;
+    var teste = false;
+
+}
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Email:
+                    <span>@Model.Email</span>
+                </th>
+                <th scope="col">Urls</th>
+            <th scope="col"></th>
+              
+            </tr>
+        </thead>
+    @if(Model.Urls != null)
+    {
+        @foreach (var list in Model.Urls)
+        {
+            if (list != null)
+            {
+                <tbody>
+                    <tr>
+                        <th scope="row">
+                            @{
+                                cont += 1;
+                            }@cont
+                        </th>
+                        <td>@Model.UserName</td>
+                        <td>@list</td>
+                        <td>
+                            <a type="button" asp-action="Edit" asp-route-list="@list" asp-route-id="@Model.Id" class="btn btn-warning">Edit</a>
+                            <a type="button" asp-action="Delete" asp-route-list="@list" asp-route-id="@Model.Id" class="btn btn-danger">Delete</a>
+                            
+                        </td>
+                    </tr>
+
+                </tbody>
+            }else{
+                if (Model.Urls.Length < 4 || list==null) teste = true;
+            } 
+
+            
+        }
+        
+    }
+    @if (Model.Urls == null || Model.Urls.Length < 4 || teste)
+    {
+        <a type="button" asp-action="Update" asp-route-id="@Model.Id" class="btn btn-secondary">Create</a>
+    }
+    
+    </table>
+
+

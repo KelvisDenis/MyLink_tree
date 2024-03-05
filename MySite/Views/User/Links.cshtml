@@ -10,31 +10,29 @@
      
         <div class="form-body">
             <h2 class="title">Create Links</h2>    
-            <div class="float-lg-end">
-                <a asp-action="Index"> skip</a>
-            </div>
+            
             
             <form asp-action="Links" method="post" class="the-form">
 
                 <label >url site</label>
-                <input asp-for=" Link.Url" type="url" placeholder="Enter you first link">
+                <input asp-for=" Link.Url" type="email" placeholder="Enter you first link">
 
                 <label>
                     url social network
                 </label>
-                <input asp-for="Link.Url" type="url" placeholder="Enter you second link">
+                <input asp-for="Link.Url" type="email" placeholder="Enter you second link">
 
                 <label>
                     url social network
                 </label>
-                <input  asp-for="Link.Url" type="url" placeholder="Enter your  third link">
+                <input asp-for="Link.Url" type="email" placeholder="Enter your  third link">
                 <label>
                     url store
                 </label>
-                <input asp-for="Link.Url" type="url" placeholder="Enter your fourth link">
+                <input asp-for="Link.Url" type="email" placeholder="Enter your fourth link">
 
                 <input type="submit" value="Create" />
-
+                <input type="submit" asp-action="Skip" value="Skip" />
             </form>
 
         </div><!-- FORM BODY-->

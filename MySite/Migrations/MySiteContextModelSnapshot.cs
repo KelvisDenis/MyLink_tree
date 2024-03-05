@@ -71,15 +71,10 @@ namespace MySite.Migrations
             modelBuilder.Entity("MySite.Models.Links", b =>
                 {
                     b.HasOne("MySite.Models.User", "User")
-                        .WithMany("Links")
+                        .WithMany()
                         .HasForeignKey("UserId");
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("MySite.Models.User", b =>
-                {
-                    b.Navigation("Links");
                 });
 #pragma warning restore 612, 618
         }

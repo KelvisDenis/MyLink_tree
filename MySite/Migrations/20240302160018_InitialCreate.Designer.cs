@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MySite.Migrations
 {
     [DbContext(typeof(MySiteContext))]
-    [Migration("20240228204449_InitialCreate")]
+    [Migration("20240302160018_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -74,15 +74,10 @@ namespace MySite.Migrations
             modelBuilder.Entity("MySite.Models.Links", b =>
                 {
                     b.HasOne("MySite.Models.User", "User")
-                        .WithMany("Links")
+                        .WithMany()
                         .HasForeignKey("UserId");
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("MySite.Models.User", b =>
-                {
-                    b.Navigation("Links");
                 });
 #pragma warning restore 612, 618
         }

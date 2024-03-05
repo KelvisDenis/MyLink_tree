@@ -1,37 +1,10 @@
 ﻿@model MySite.Models.User
 @{
     Layout = "_Layout";
-    int cont = 0;
     
     
 }
-<table class="table">
-    
-        <h3>Welcome: @Model.UserName</h3>
-        
-        <div class="d-grid gap-2 d-md-block">
-        <button asp-action="Links" class="btn btn-primary" type="button">Links</button>
-    </div>
-    <tbody>
-        @if( Model.Urls.Length != null)
-        {
-            <h4>Your links</h4>
-            @foreach (var i in Model.Urls)
-            {
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">@i</h5>
-                        <p class="card-text">
-                            You link @{
-                                cont += 1;
-                            } @cont
-                        </p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            }
-        }
-       
-    </tbody>
-   
-</table>
+<h2>Home</h2>
+<p>
+    Seja bem vindo: @Model.UserName
+</p>

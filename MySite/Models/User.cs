@@ -10,7 +10,7 @@ namespace MySite.Models
         public string? UserName { get; set; }
         public string[]? Urls { get; set; }
 
-        public ICollection<Links>? Links { get; set; } = new List<Links>();
+
 
         public User()
         {
@@ -23,6 +23,7 @@ namespace MySite.Models
             Password = password;
             UserName = userName;
         }
+        /*
         public void Add(string link) {
          Links links = new Links { Url = link};
          Links.Add(links);
@@ -30,12 +31,18 @@ namespace MySite.Models
         public void Remove(Links links) {
         Links.Remove(links);
         }
+        */
         public bool checkpassword (string email, string senha)
         {
             if (email == Email && senha == Password) { 
                 return true;
             }
             return false;
+        }
+        public void AddUrl(string url)
+        {
+            Urls.Append(url);
+           
         }
 
     }

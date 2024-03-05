@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "4BsPNHEP5bBRRpHm7dgMcQupadZd4c8quimp2QDXcgUdwhlG+LceT1jj+prRNQa17mGiEw9Cydpaf3pmntPFzw==",
+  "dgSpecHash": "3LejwHBBE5glSK9+Ptd6niuknpyeVq2KV2V08Amzqf3ckebmpuyrKGajAchNY+0oRqZSTaJ+AQO95eTYHBauqQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\denis\\Music\\MySite\\MySite\\MySite\\MySite.csproj",
   "expectedPackageFiles": [
@@ -32,6 +32,7 @@
     "C:\\Users\\denis\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
     "C:\\Users\\denis\\.nuget\\packages\\microsoft.web.infrastructure\\1.0.0\\microsoft.web.infrastructure.1.0.0.nupkg.sha512",
     "C:\\Users\\denis\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\denis\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\denis\\.nuget\\packages\\npgsql\\8.0.2\\npgsql.8.0.2.nupkg.sha512",
     "C:\\Users\\denis\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\8.0.2\\npgsql.entityframeworkcore.postgresql.8.0.2.nupkg.sha512",
     "C:\\Users\\denis\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",

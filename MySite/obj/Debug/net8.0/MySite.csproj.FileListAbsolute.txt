@@ -110,3 +110,4 @@ C:\Users\denis\Music\MySite\MySite\MySite\obj\Debug\net8.0\refint\MySite.dll
 C:\Users\denis\Music\MySite\MySite\MySite\obj\Debug\net8.0\MySite.pdb
 C:\Users\denis\Music\MySite\MySite\MySite\obj\Debug\net8.0\MySite.genruntimeconfig.cache
 C:\Users\denis\Music\MySite\MySite\MySite\obj\Debug\net8.0\ref\MySite.dll
+C:\Users\denis\Music\MySite\MySite\MySite\bin\Debug\net8.0\Newtonsoft.Json.dll
